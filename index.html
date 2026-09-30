@@ -8,13 +8,25 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Alpine.js for lightweight UI state management -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
     <!-- Google Fonts (Nanum Myeongjo & Cormorant Garamond for elegant calligraphy) -->
+    <!-- map-roman-compressed / title -->
     <link rel="stylesheet" href="https://use.typekit.net/gnp1vyk.css">
+    <!-- nautica / subtitle -->
     <link rel="stylesheet" href="https://use.typekit.net/gnp1vyk.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://use.typekit.net/gnp1vyk.css">
+    <!-- Pretendard / sans -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Serif+KR:wght@300;400;500;600&family=Pretendard:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Hanserif / korean serif-->
+    <script>
+  (function(d) {
+    var config = {
+      kitId: 'gnp1vyk',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
     
     <!-- Remix Icon CDN -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
@@ -33,10 +45,10 @@
                         softgray: '#8C8583'
                     },
                     fontFamily: {
-                        serif: ['"Noto Serif KR"', 'serif'],
                         title: ['"map-roman-compressed"', '"Cormorant Garamond"', 'serif'],
                         subtitle: ['nautica', 'sans-serif'],
                         sans: ['Pretendard', 'sans-serif']
+                        koreanserif: ['source-han-serif-korean', 'serif']
                     }
                 }
             }
@@ -85,37 +97,37 @@
     </div>
 
     <!-- 1. Main Cover Section -->
-    <section class="relative min-h-[90vh] flex flex-col justify-between text-center p-6">
-        <!-- 1-1. Main Photo Frame -->
-        <div style="margin-top: 120px ; margin-bottom: 30px ; "class="relative px-12">
-         <div class="relative rounded-none overflow-hidden shadow-xl aspect-square bg-neutral-200">
+    <section class="fade-in-cover relative min-h-[90vh] flex flex-col justify-between text-center p-6">
+    <!-- 1-1. Main Photo Frame -->
+    <div style="margin-top: 120px; margin-bottom: 30px;" class="relative px-12">
+        <div class="relative rounded-none overflow-hidden shadow-xl aspect-square bg-neutral-200">
             <img src="./images/main-image.jpg" 
-                alt="Main Image"
-                class="w-full h-full object-cover">
-            </div>
+                 alt="Main Image"
+                 class="w-full h-full object-cover">
         </div>
-        
-        <!-- 1-2. Date and Time -->
-        <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-md px-6 py-2 rounded-full shadow-md border border-gold/20 text-xs text-deepbrown whitespace-nowrap tracking-widest font-serif">
-            2027. 10. 09. SAT PM 15:40
-        </div>
-        <div class="pt-10">
-            <p class="font-subtitle text-[30px] text-white font-normal mb-[5px]">Our Wedding Day</p>
-            <h2 class="font-title text-[45px] text-white font-normal leading-none tracking-wider">JONGMYEONG & JIEUN</h2>
-        </div>
-
-        <div class="pb-6 space-y-3">
-            <h1 class="text-2xl font-serif tracking-widest text-deepbrown font-medium">
-                김종명 <span class="text-xs text-gold mx-1">•</span> 이지은
-            </h1>
-            <p class="text-xs text-softgray tracking-wider leading-relaxed">
-                그레이스파티 인천
-            </p>
-        </div>
+    </div>
+    
+    <!-- 1-2. Date and Time -->
+    <div class="pt-10">
+        <p class="font-subtitle text-[30px] text-white font-normal mb-[5px]">Our Wedding Day</p>
+        <h2 class="font-title text-[45px] text-white font-normal leading-none tracking-wider">JONGMYEONG & JIEUN</h2>
+    </div>
+    
+    <div class="w-[80px] h-[1px] bg-white/60 mx-auto mt-[40px] mb-[40px]"></div>
+    
+    <div class="pt-0">
+        <h1 class="font-sans text-[10px] text-white font-thin tracking-widest leading-none">
+            9 October 2027
+        </h1>
+        <p class="font-sans text-[10px] text-white font-thin tracking-widest leading-none mt-[7px]">
+            Graceparty Incheon
+        </p>
+    </div>
     </section>
 
+    
     <!-- D-Day Timer Banner -->
-    <section class="bg-white/80 backdrop-blur-sm py-8 px-6 text-center border-y border-amber-100/60 shadow-sm">
+    <!-- section class="bg-white/80 backdrop-blur-sm py-8 px-6 text-center border-y border-amber-100/60 shadow-sm">
         <p class="text-xs text-gold font-english uppercase tracking-widest mb-4">The Big Day</p>
         <div class="grid grid-cols-4 gap-3 max-w-xs mx-auto">
             <div class="bg-cream p-3 rounded-2xl border border-amber-100/50">
@@ -145,17 +157,15 @@
         </div>
         
         <div class="space-y-2">
-            <p class="font-english text-xs text-gold tracking-widest uppercase">INVITATION</p>
-            <h3 class="text-xl font-serif text-deepbrown font-medium">소중한 분들을 모십니다</h3>
+            <p class="font- text-xs text-gold tracking-widest uppercase">INVITATION</p>
         </div>
 
-        <p class="text-sm leading-8 text-neutral-600 font-serif font-light whitespace-pre-line">
-            서로의 따뜻한 온기가 되어주던 두 사람이
-            하나가 되는 소중한 약속을 하려 합니다.
-
-            저희의 뜻깊은 시작의 자리에
-            귀한 발걸음 하시어 축복해 주신다면
-            더없는 기쁨으로 간직하겠습니다.
+        <p class="font-koreanserif text-[15px] font-normal text-white leading-[30px]  whitespace-pre-line">
+            가을 햇살처럼 따스한 응원을 보내주신
+            여러분께 감사드립니다.
+            평생의 동반자가 되기로 약속하는 날,
+            귀한 발걸음으로
+            자리를 빛내주시면 감사하겠습니다.
         </p>
 
         <div class="w-12 h-[1px] bg-gold/30 mx-auto my-8"></div>
